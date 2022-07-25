@@ -1,5 +1,8 @@
 <?php 
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
+
+   require "../model/tarefa.php";
+   require "../service/tarefaService.php";
+   require "../model/conexao.php";
+    
+
 ?>
