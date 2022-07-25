@@ -1,14 +1,22 @@
 <?php 
 
-   require "../model/tarefa.php";
-   require "../service/tarefaService.php";
-   require "../model/conexao.php";
+   require "/xampp/htdocs/git/Projetos/AppListaTarefas/private/model/tarefa.php";
+   require "/xampp/htdocs/git/Projetos/AppListaTarefas/private/service/tarefaService.php";
+   require "/xampp/htdocs/git/Projetos/AppListaTarefas/private/model/conexao.php";
+
+   echo '<pre>';
+   print_r($_POST);
+   echo '</pre>';
 
    $tarefa = new Tarefa();
-   $tarefa->__set('tarefa', $_POST['tarefa']);
+   $tarefa->__set('tarefa', $_POST['nova_tarefa']);
 
    $conexao = new Conexao();
 
-   $tarefaService = new TarefaService();
+   $tarefaService = new TarefaService($conexao, $tarefa);
 
+   echo '<pre>';
+   print_r($tarefaService);
+   echo '</pre>';
+ 
 ?>
