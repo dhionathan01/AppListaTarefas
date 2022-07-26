@@ -4,6 +4,9 @@
    require "/xampp/htdocs/git/Projetos/AppListaTarefas/private/service/tarefaService.php";
    require "/xampp/htdocs/git/Projetos/AppListaTarefas/private/model/conexao.php";
 
+   $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
+   // Se a ação inserir for disparada pelo get faça:
+   if($acao == 'inserir'){
    $tarefa = new Tarefa();
    $tarefa->__set('tarefa', $_POST['nova_tarefa']);
 
@@ -13,5 +16,10 @@
    $tarefaService->inserir();
 
    header('Location: ../nova_tarefa.php?inclusao=1');// Inserindo redirecionamento
+   }else if($acao == 'recuperar'){
+      echo 'Chegamos até aqui!';
+   }
+   
 
+   
 ?>
