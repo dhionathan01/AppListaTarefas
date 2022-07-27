@@ -1,7 +1,7 @@
 function editar(id, conteudo_tarefa) {
     // Criar um form de edicao
     let form = document.createElement('form');
-    form.action = '#';
+    form.action = 'controller/tarefa_controller.php?acao=atualizar';
     form.method = 'POST';
     form.className = 'row';
 
@@ -43,7 +43,7 @@ function editar(id, conteudo_tarefa) {
 
     // incluir form na página
     // A função insertBefore() permite fazer a inserção de uma árvore de elementos dentro de um elemento já redenizado.
-    tarefa.insertBefore(form, tarefa[0]); // incluir forme no primeiro elemento filho de tarefa
+    tarefa.insertBefore(form, tarefa[0]); // incluir form no primeiro elemento filho de tarefa
 
-    alert(conteudo_tarefa);
+    
 }
