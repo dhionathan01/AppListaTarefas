@@ -44,7 +44,10 @@ class TarefaService{
 
     public function remover() // delete
     {
-        
+        $query = 'delete from tb_tarefas where id = ?';
+        $stmt = $this->conexao->prepare($query);
+        $stmt->bindValue(1, $this->tarefa->__get('id'));
+        $stmt->execute();
     }
 }
 ?>  

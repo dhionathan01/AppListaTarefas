@@ -5,6 +5,8 @@
    require "/xampp/htdocs/git/Projetos/AppListaTarefas/private/model/conexao.php";
 
    $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
+
+   echo $acao;
    // Se a ação inserir for disparada pelo get faça:
    if($acao == 'inserir'){
    $tarefa = new Tarefa();
@@ -26,7 +28,7 @@
 
    }else if($acao == 'atualizar'){
       $tarefa = new Tarefa();
-      
+
       $tarefa
             ->__set('id', $_POST['id'])
             ->__set('tarefa', $_POST['tarefa']); //setters encadeados
@@ -35,8 +37,17 @@
       $tarefaService = new TarefaService($conexao, $tarefa);
       if($tarefaService->atualizar()){
          header('location: ../todas_tarefas.php');
-
       };
+
+   }else if($acao == 'remover'){
+      $tarefa = new Tarefa();
+      $tarefa->__set('id', $_GET['id']);
+
+      $conexao = new Conexao();
+
+      $tarefaService = new TarefaService($conexao, $tarefa);
+      $tarefaService->remover();
+      header('location: todas_tarefas.php');
    }
 
    

@@ -44,6 +44,9 @@ function editar(id, conteudo_tarefa) {
     // incluir form na página
     // A função insertBefore() permite fazer a inserção de uma árvore de elementos dentro de um elemento já redenizado.
     tarefa.insertBefore(form, tarefa[0]); // incluir form no primeiro elemento filho de tarefa
+}
 
+function remover(id) {
+    location.href = 'todas_tarefas.php?acao=remover&id=' + id;
     
 }
