@@ -58,6 +58,14 @@ class TarefaService{
         $stmt->bindValue(2, $this->tarefa->__get('id'));
         return $stmt->execute();
     }
+
+    public function recuperarPendentes()
+    {
+        $query= 'SELECT * FROM `tb_tarefas` WHERE id_status = 1';
+        $stmt = $this->conexao->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
     
 }
 ?>  

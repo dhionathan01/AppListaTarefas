@@ -6,7 +6,6 @@
 
    $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
 
-   echo $acao;
    // Se a ação inserir for disparada pelo get faça:
    if($acao == 'inserir'){
    $tarefa = new Tarefa();
@@ -57,6 +56,13 @@
       $tarefaService->concluirTarefa();
       
       header('location: todas_tarefas.php');
+   }else if($acao == 'recuperarPendentes'){
+     
+      $tarefa = new Tarefa();
+      $conexao = new Conexao();
+
+      $tarefaService = new TarefaService($conexao, $tarefa);
+      $tarefas = $tarefaService->recuperarPendentes();
    }
 
    
