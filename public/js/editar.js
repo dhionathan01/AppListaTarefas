@@ -58,8 +58,8 @@ function remover(id, paginaAtual) {
 
 function concluirTarefa(id, paginaAtual) {
     if (paginaAtual == 'index') {
-        location.href = 'index.php?pag=index&acao=remover&id=' + id;
+        location.href = 'index.php?pag=index&acao=concluir_tarefa&id=' + id;
     }else if (paginaAtual == 'todas_tarefas') {
-        location.href = 'todas_tarefas.php?pag=todas_tarefas&acao=remover&id=' + id;
+        location.href = 'todas_tarefas.php?pag=todas_tarefas&acao=concluir_tarefa&id=' + id;
     }
 }
