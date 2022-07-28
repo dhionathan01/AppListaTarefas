@@ -50,3 +50,7 @@ function remover(id) {
     location.href = 'todas_tarefas.php?acao=remover&id=' + id;
     
 }
+
+function concluirTarefa(id) {
+    location.href = 'todas_tarefas.php?acao=concluir_tarefa&id=' + id;
+}

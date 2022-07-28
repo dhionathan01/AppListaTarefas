@@ -48,6 +48,15 @@
       $tarefaService = new TarefaService($conexao, $tarefa);
       $tarefaService->remover();
       header('location: todas_tarefas.php');
+   }else if($acao == 'concluir_tarefa'){
+      $tarefa = new Tarefa();
+      $tarefa->__set('id', $_GET['id'])->__set('id_status', 2);
+
+      $conexao = new Conexao();
+      $tarefaService = new TarefaService($conexao, $tarefa);
+      $tarefaService->concluirTarefa();
+      
+      header('location: todas_tarefas.php');
    }
 
    
