@@ -46,11 +46,20 @@ function editar(id, conteudo_tarefa) {
     tarefa.insertBefore(form, tarefa[0]); // incluir form no primeiro elemento filho de tarefa
 }
 
-function remover(id) {
-    location.href = 'todas_tarefas.php?acao=remover&id=' + id;
+function remover(id, paginaAtual) {
+    if (paginaAtual == 'index') {
+        location.href = 'index.php?pag=index&acao=remover&id=' + id;
+    }else if (paginaAtual == 'todas_tarefas') {
+        location.href = 'todas_tarefas.php?pag=todas_tarefas&acao=remover&id=' + id;
+    }
+    
     
 }
 
-function concluirTarefa(id) {
-    location.href = 'todas_tarefas.php?acao=concluir_tarefa&id=' + id;
+function concluirTarefa(id, paginaAtual) {
+    if (paginaAtual == 'index') {
+        location.href = 'index.php?pag=index&acao=remover&id=' + id;
+    }else if (paginaAtual == 'todas_tarefas') {
+        location.href = 'todas_tarefas.php?pag=todas_tarefas&acao=remover&id=' + id;
+    }
 }

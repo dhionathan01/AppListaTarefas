@@ -1,4 +1,5 @@
 <?php
+	$paginaAtual = 'todas_tarefas';
 	$acao = 'recuperar';
 	require 'controller/tarefa_controller.php';
 
@@ -12,7 +13,6 @@
 		<link rel="stylesheet" href="css/estilo.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
 		<script src="js/editar.js"></script>
 	</head>
 
@@ -49,12 +49,12 @@
 											 <?= $tarefa->tarefa ?> (<?= $tarefa->status?>)
 										</div>
 										<div class="col-sm-3 mt-2 d-flex justify-content-between">
-											<i class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?=$tarefa->id?>)"></i>
+										<i class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?=$tarefa->id?>, '<?=$paginaAtual?>')"></i>
 
 											<? if($tarefa->status == 'pendente'){ ?>
 
-												<i class="fas fa-edit fa-lg text-info" onclick="editar(<?=$tarefa->id ?>,'<?= 	$tarefa->tarefa ?>'  )"></i>
-												<i class="fas fa-check-square fa-lg text-success" onclick="concluirTarefa(<?=$tarefa->id?>)"></i>
+												<i class="fas fa-edit fa-lg text-info" onclick="editar(<?=$tarefa->id ?>,'<?= 		$tarefa->tarefa ?>')"></i>
+												<i class="fas fa-check-square fa-lg text-success"onclick="concluirTarefa(<?=$tarefa->id?>, '<?=$paginaAtual?>')"></i>
 											<? }; ?>
 										</div>
 									</div>
