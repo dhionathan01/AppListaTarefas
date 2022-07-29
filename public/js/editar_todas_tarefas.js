@@ -1,7 +1,7 @@
 function editar(id, conteudo_tarefa) {
     // Criar um form de edicao
     let form = document.createElement('form');
-    form.action = 'controller/tarefa_controller.php?acao=atualizar';
+    form.action = 'todas_tarefas.php?acao=atualizar';
     form.method = 'POST';
     form.className = 'row';
 
