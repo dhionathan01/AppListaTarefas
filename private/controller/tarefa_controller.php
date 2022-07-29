@@ -4,7 +4,6 @@
    require "/xampp/htdocs/git/Projetos/AppListaTarefas/private/service/tarefaService.php";
    require "/xampp/htdocs/git/Projetos/AppListaTarefas/private/model/conexao.php";
 
-   echo $acao;
 
    $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
 
