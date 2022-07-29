@@ -1,7 +1,7 @@
 function editar(id, conteudo_tarefa) {
     // Criar um form de edicao
     let form = document.createElement('form');
-    form.action = 'controller/tarefa_controller.php?acao=atualizar';
+    form.action = 'index.php?pag=index&acao=atualizar';
     form.method = 'POST';
     form.className = 'row';
 
@@ -46,20 +46,12 @@ function editar(id, conteudo_tarefa) {
     tarefa.insertBefore(form, tarefa[0]); // incluir form no primeiro elemento filho de tarefa
 }
 
-function remover(id, paginaAtual) {
-    if (paginaAtual == 'index') {
+function remover(id) {
         location.href = 'index.php?pag=index&acao=remover&id=' + id;
-    }else if (paginaAtual == 'todas_tarefas') {
-        location.href = 'todas_tarefas.php?pag=todas_tarefas&acao=remover&id=' + id;
-    }
     
     
 }
 
-function concluirTarefa(id, paginaAtual) {
-    if (paginaAtual == 'index') {
+function concluirTarefa(id) {
         location.href = 'index.php?pag=index&acao=concluir_tarefa&id=' + id;
-    }else if (paginaAtual == 'todas_tarefas') {
-        location.href = 'todas_tarefas.php?pag=todas_tarefas&acao=concluir_tarefa&id=' + id;
-    }
 }
